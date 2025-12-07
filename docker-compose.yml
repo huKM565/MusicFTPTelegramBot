@@ -7,3 +7,13 @@ services:
     volumes:
       - ./downloads:/app/downloads
     restart: unless-stopped
+    networks:
+      music-bot-network:
+        ipv4_address: 172.40.0.10
+
+networks:
+  music-bot-network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.40.0.0/16
