@@ -1,0 +1,9 @@
+services:
+  musicbot:
+    build: .
+    container_name: music_bot
+    env_file:
+      - .env
+    volumes:
+      - ./downloads:/app/downloads
+    restart: unless-stopped
